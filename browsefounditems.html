@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Browse Found Items - Lost and Found</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+  :root {
+    --color-bg: #f8e0e0;
+    --color-text: #374151;
+    --color-text-muted: #6b7280;
+    --color-primary: #111827;
+    --color-accent: #2563eb;
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --radius: 0.75rem;
+    --transition-fast: 0.3s ease;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+  }
+  a:hover,
+  a:focus {
+    color: #1d4ed8;
+    outline-offset: 2px;
+  }
+  header {
+    position: sticky;
+    top: 0;
+    background: var(--color-bg);
+    border-bottom: 1px solid #e5e7eb;
+    z-index: 1000;
+    box-shadow: 0 1px 8px var(--shadow-light);
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4.5rem;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    user-select: none;
+    letter-spacing: -0.03em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .nav-links a {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color var(--transition-fast);
+  }
+  .nav-links a.active,
+  .nav-links a:hover,
+  .nav-links a:focus {
+    border-bottom-color: var(--color-accent);
+  }
+
+  main {
+    padding: 4rem 0 6rem;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  .items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  .item-card {
+    background: #f9fafb;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 10px var(--shadow-light);
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+  }
+  .item-card:hover,
+  .item-card:focus-within {
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+    transform: translateY(-3px);
+    outline: none;
+  }
+  .item-icon {
+    font-size: 3rem;
+    color: var(--color-accent);
+  }
+  .item-name {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    user-select: none;
+  }
+  .item-meta {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+  }
+  .item-desc {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    flex-grow: 1;
+    user-select: text;
+  }
+
+  footer {
+    border-top: 1px solid #e5e7eb;
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <nav aria-label="Primary Navigation">
+      <div class="logo" tabindex="0">Lost &amp; Found</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="report.html">Report Lost Item</a>
+        <a href="browse.html" class="active" aria-current="page">Browse Found Items</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+<main>
+  <h1>Browse Found Items</h1>
+  <div class="items-grid" role="list" aria-label="List of found items">
+    <article class="item-card" tabindex="0" role="listitem">
+      <div class="item-icon" aria-hidden="true">🎒</div>
+      <div class="item-name">Black Backpack</div>
+      <div class="item-meta">Found: 2024-06-12 · Central Library</div>
+      <p class="item-desc">A black nylon backpack with multiple compartments and a small keychain.</p>
+    </article>
+    <article class="item-card" tabindex="0" role="listitem">
+      <div class="item-icon" aria-hidden="true">⌚</div>
+      <div class="item-name">Silver Wristwatch</div>
+      <div class="item-meta">Found: 2024-06-10 · City Park</div>
+      <p class="item-desc">Elegant silver wristwatch with a brown leather strap, slightly scratched face.</p>
+    </article>
+    <article class="item-card" tabindex="0" role="listitem">
+      <div class="item-icon" aria-hidden="true">📱</div>
+      <div class="item-name">Smartphone</div>
+      <div class="item-meta">Found: 2024-06-09 · Coffee Shop</div>
+      <p class="item-desc">Black smartphone with a cracked screen protector, no case.</p>
+    </article>
+    <article class="item-card" tabindex="0" role="listitem">
+      <div class="item-icon" aria-hidden="true">🧥</div>
+      <div class="item-name">Red Jacket</div>
+      <div class="item-meta">Found: 2024-06-07 · Bus Station</div>
+      <p class="item-desc">Red waterproof jacket, size medium, with reflective stripes on sleeves.</p>
+    </article>
+    <article class="item-card" tabindex="0" role="listitem">
+      <div class="item-icon" aria-hidden="true">🎧</div>
+      <div class="item-name">Wireless Earbuds</div>
+      <div class="item-meta">Found: 2024-06-05 · University Campus</div>
+      <p class="item-desc">White wireless earbuds in a black charging case, one earbud missing.</p>
+    </article>
+    <article class="item-card" tabindex="0" role="listitem">
+      <div class="item-icon" aria-hidden="true">👜</div>
+      <div class="item-name">Brown Handbag</div>
+      <div class="item-meta">Found: 2024-06-03 · Shopping Mall</div>
+      <p class="item-desc">Brown leather handbag with gold accents and a tassel zipper pull.</p>
+    </article>
+  </div>
+</main>
+<footer>
+  &copy; 2024 Lost and Found Service. All rights reserved.
+</footer>
+</body>
+</html>
